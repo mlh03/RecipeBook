@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Recipe.Models;
+using RecipeBook.Models;
 
-namespace Recipe.Controllers
+namespace RecipeBook.Controllers
 {
     public class IngredientController : Controller
     {
@@ -48,14 +48,14 @@ namespace Recipe.Controllers
         // GET: Ingredient/Create
         public IActionResult Create()
         {
-            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Description");
+            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Name");
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email");
             return View();
         }
 
         // POST: Ingredient/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,UserId,RecipeId")] Ingredient ingredient)
@@ -66,7 +66,7 @@ namespace Recipe.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Description", ingredient.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Name", ingredient.RecipeId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email", ingredient.UserId);
             return View(ingredient);
         }
@@ -84,14 +84,14 @@ namespace Recipe.Controllers
             {
                 return NotFound();
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Description", ingredient.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Name", ingredient.RecipeId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email", ingredient.UserId);
             return View(ingredient);
         }
 
         // POST: Ingredient/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
+        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,UserId,RecipeId")] Ingredient ingredient)
@@ -121,7 +121,7 @@ namespace Recipe.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Description", ingredient.RecipeId);
+            ViewData["RecipeId"] = new SelectList(_context.Recipes, "Id", "Name", ingredient.RecipeId);
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "Email", ingredient.UserId);
             return View(ingredient);
         }

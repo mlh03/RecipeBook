@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Recipe.Models
+namespace RecipeBook.Models
 {
     public class Step
     {
