@@ -31,11 +31,16 @@
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="Auth\" />
+    <None Remove="Recipe.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\Images\" />
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="wwwroot\Images\" />
+    <Folder Include="Auth\" />
   </ItemGroup>
 </Project>

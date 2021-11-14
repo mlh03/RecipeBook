@@ -372,8 +372,6 @@
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Recipe.TagHelpers.input.cache
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Recipe.TagHelpers.output.cache
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Recipe.RazorCoreGenerate.cache
-/Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Razor/Views/Home/Index.cshtml.g.cs
-/Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Razor/Views/Home/Privacy.cshtml.g.cs
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Razor/Views/Shared/Error.cshtml.g.cs
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Razor/Views/Shared/_Layout.cshtml.g.cs
 /Users/mohamedalsadi/Desktop/RecipeApp/Recipe/obj/Debug/net5.0/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs

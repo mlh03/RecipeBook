@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RecipeBook.Auth;
 using RecipeBook.Models;
 
 namespace RecipeBook
@@ -29,7 +30,7 @@ namespace RecipeBook
                      config.AccessDeniedPath = "/User/AccessDenied";
                  });
 
-            services.AddScoped<IAuthorizationHandler>();
+            services.AddScoped<IAuthorizationHandler, RolesAuthorizationHandler>();
 
 
             services.AddControllersWithViews();
