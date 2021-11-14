@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 
-namespace Recipe.Models
+namespace RecipeBook.Models
 {
     public class DataBaseContext : DbContext
     {

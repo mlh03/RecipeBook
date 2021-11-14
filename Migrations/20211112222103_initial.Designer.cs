@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Recipe.Models;
+using RecipeBook.Models;
 
-namespace Recipe.Migrations
+namespace RecipeBook.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
     [Migration("20211112222103_initial")]

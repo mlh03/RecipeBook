@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Recipe.Migrations
+namespace RecipeBook.Migrations
 {
     public partial class initial : Migration
     {
