@@ -1,10 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Find Your Taste</h1>
-    <div style=" height: 300px; position: relative; bottom: 20px;">
-        <img src="/JumboImg/Libraryap.jpeg" style="height: 300px; width: 2000px; object-fit: cover; object-position: 85% 80%; position:absolute">
+<div style=" height: 300px; position: relative; bottom: 20px;">
+    <div class="text-center">
+        <h1 class="display-4">Find Your Taste</h1>
+        <img src="/Images/188745681_10165096130080384_5395955813789129204_n.jpeg" style="height: 300px; width: 1000px; object-fit: cover; object-position: 80% 50%; position:center">
     </div>
 </div>
+
+<div>
+    <a asp-controller="User" asp-action="Login">Login Here | </a>
+    <a asp-controller="User" asp-action="Create">Sign Up Here</a>
+</div>
+
+

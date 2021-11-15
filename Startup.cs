@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Recipe.Models;
+using RecipeBook.Auth;
+using RecipeBook.Models;
 
-namespace Recipe
+namespace RecipeBook
 {
     public class Startup
     {
@@ -25,9 +22,19 @@ namespace Recipe
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<DataBaseContext>(item =>
-item.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddAuthentication("CookieAuthentication")
+                 .AddCookie("CookieAuthentication", config =>
+                 {
+                     config.Cookie.Name = "UserLoginCookie"; // Name of cookie   
+                     config.LoginPath = "/User/Login"; // Path for the redirect to user login page  
+                     config.AccessDeniedPath = "/User/AccessDenied";
+                 });
+
+            services.AddScoped<IAuthorizationHandler, RolesAuthorizationHandler>();
+
+
             services.AddControllersWithViews();
+            services.AddDbContext<DataBaseContext>(item => item.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
