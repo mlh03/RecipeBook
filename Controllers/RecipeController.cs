@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RecipeBook.Models;
-
 
 namespace RecipeBook.Controllers
 {
@@ -29,8 +26,8 @@ namespace RecipeBook.Controllers
         }
 
         //GET: Recipe  /recipe? page = 1
-       [Route("recipe/{Page}")]   // recipe/1
-       public IActionResult Index(int Page)
+        [Route("recipe/{Page}")]   // recipe/1
+        public IActionResult Index(int Page)
         {
             int Total = _context.Recipes.Count();
             int PageSize = 3;

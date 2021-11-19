@@ -38,7 +38,8 @@
 
                     @for (int i = 1; i < Model.RecipeImages.Count; i++)
                     {
-        <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>}
+        <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
+}
                 </ol>
                 <div class="carousel-inner">
                     @foreach (var images in Model.RecipeImages)
@@ -63,12 +64,10 @@
     </dl>
     @for (int i = 0; i < Model.Steps.Count; i++)
     {
-        <div>@Model.Steps[i].Name</div>
-    }
+<div>@Model.Steps[i].Name</div>}
     @for (int i = 0; i < Model.Ingredients.Count; i++)
     {
-        <div>@Model.Ingredients[i].Name</div>
-    }
+<div>@Model.Ingredients[i].Name</div>}
 
 </div>
 
